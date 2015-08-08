@@ -14,6 +14,7 @@ if ($cacheKey !== null && is_string($cacheKey)) {
     $data = \Yii::$app->cache->get($cacheKey);
     if ($data === false)
     {
+        $data = $cnzzCode;
         \Yii::$app->cache->set($cacheKey, $cnzzCode);
     }
 } else {
