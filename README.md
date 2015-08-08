@@ -28,5 +28,9 @@ Usage
 Once the extension is installed, simply use it in your code by :
 
 ```php
-<?= \vistart\Widgets\AutoloadExample::widget(); ?>
+<?= \vistart\Widgets\CnzzWidget::widget([
+    'visible' => true,
+    'cnzzCode' => <the js code of statistical tool>,
+    'host' => <the hostname which your website just host>,
+]); ?>
 ```

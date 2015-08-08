@@ -10,13 +10,23 @@
  * @license http://vistart.name/license/
  */
 
+if ($cacheKey !== null && is_string($cacheKey)) {
+    $data = \Yii::$app->cache->get($cacheKey);
+    if ($data === false)
+    {
+        \Yii::$app->cache->set($cacheKey, $cnzzCode);
+    }
+} else {
+    $data = $cnzzCode;
+}
 ?>    
+
 <?php if (\Yii::$app->request->serverName === $host) :?>
     <?php if ($visible === true) :?>
-        <?= $cnzzCode ?>
+        <?= $data ?>
     <?php else: ?>
     <div class="hidden">
-        <?= $cnzzCode ?>
+        <?= $data ?>
     </div>
     <?php endif; ?>
 <?php endif; ?>
